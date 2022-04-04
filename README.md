@@ -3,15 +3,15 @@ Master-Master-Replication
 
 ## Creating 2 EC2 instances DB-1 and DB-2.
 
-#### Install mariadb-server on DB1 and DB2
+#### Install mariadb-server on DB-1 and DB-2
 
-> [root@ip-172-31-33-1 ~]# yum install mariadb-server -y
+> ~]# yum install mariadb-server -y
 
 #### After installation Enabling log_bin on both servers.
 
-> [root@ip-172-31-33-1 ~]# vim /etc/my.cnf.d/server.cnf
+> ~]# vim /etc/my.cnf.d/server.cnf
 
-#### In DB1
+#### In DB-1
 
 ``` 
 [mysqld]
@@ -21,7 +21,7 @@ server-id=1
 log_bin=/var/log/mariadb/mariadb-bin.log 
 ```
 
-#### In DB2
+#### In DB-2
 
 ``` 
 [mysqld]
@@ -31,4 +31,18 @@ server-id=2
 log_bin=/var/log/mariadb/mariadb-bin.log 
 ```
 
-Create 'root' user.
+#### Start and enable mysql server on both servers
+
+> ~]# systemctl start mariadb
+> ~]# systemctl enable mariadb
+
+
+#### Create 'root' user on both servers
+
+> ~]# mysql_secure_installation
+
+#### Restart mariadb
+
+> ~]# systemctl restart mariadb
+
+#### Mariadb master-master replication on DB-1 and DB-2.
