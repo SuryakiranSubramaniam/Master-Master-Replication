@@ -13,18 +13,22 @@ Master-Master-Replication
 
 #### In DB1
 
-``` [mysqld]
+``` 
+[mysqld]
 
 server-id=1
 
-log_bin=/var/log/mariadb/mariadb-bin.log ```
+log_bin=/var/log/mariadb/mariadb-bin.log 
+```
 
 #### In DB2
 
-``` [mysqld]
+``` 
+[mysqld]
 
 server-id=2
 
-log_bin=/var/log/mariadb/mariadb-bin.log ```
+log_bin=/var/log/mariadb/mariadb-bin.log 
+```
 
 Create 'root' user.
