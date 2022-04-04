@@ -45,4 +45,9 @@ log_bin=/var/log/mariadb/mariadb-bin.log
 
 > ~]# systemctl restart mariadb
 
-#### Mariadb master-master replication on DB-1 and DB-2.
+#### Mariadb master-master replication on DB-1 and DB-2
+
+#### In DB-1
+
+> ~]#  mysql -u root -p123
+
