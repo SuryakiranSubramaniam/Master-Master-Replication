@@ -131,4 +131,4 @@ MariaDB [(none)]> show master status;
 ```
 #### Restart Mariadb on both servers.
 
-> # systemctl restart mariadb
+> ~]# systemctl restart mariadb
